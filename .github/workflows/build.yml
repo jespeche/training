@@ -1,0 +1,34 @@
+name: Spring Kotlin Kafka Microservice - Training
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Build cnt-101-kotlin-spring-events
+      run:  cnt-101-kotlin-spring-events/gradlew -p cnt-101-kotlin-spring-events build
+    - name: Build cnt-102-kotlin-spring-async-events
+      run:  cnt-102-kotlin-spring-async-events/gradlew -p cnt-102-kotlin-spring-async-events build
+    - name: Build cnt-103-kotlin-spring-events-ddd
+      run:  cnt-103-kotlin-spring-events-ddd/gradlew -p cnt-103-kotlin-spring-events-ddd build 
+    - name: Build cnt-104-kotlin-spring-events-kafka
+      run:  cnt-104-kotlin-spring-events-kafka/gradlew -p cnt-104-kotlin-spring-events-kafka build
+    - name: Build cnt-104-kotlin-spring-events-kafka
+      run:  cnt-104-kotlin-spring-events-kafka/gradlew -p cnt-104-kotlin-spring-events-kafka build
+    - name: Build cnt-105-kotlin-spring-jackson
+      run: cnt-105-kotlin-spring-jackson/gradlew -p cnt-105-kotlin-spring-jackson build
+    - name: Build cnt-106-kotlin-spring-aop-aspectj
+      run:  cnt-106-kotlin-spring-aop-aspectj/gradlew -p cnt-106-kotlin-spring-aop-aspectj build
+    - name: Build cnt-107-kotlin-spring-aop-annotation
+      run:  cnt-107-kotlin-spring-aop-annotation/gradlew -p cnt-107-kotlin-spring-aop-annotation build
+    - name: Build cnt-201-kotlin-spring-graphql
+      run:  cnt-201-kotlin-spring-graphql/gradlew -p cnt-201-kotlin-spring-graphql build
+

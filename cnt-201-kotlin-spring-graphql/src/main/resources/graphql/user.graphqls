@@ -1,0 +1,19 @@
+type Query {
+    person(id: ID!) : Person
+}
+
+type Mutation {
+    # Create a new instance of a Person for demo purposes.
+    createPerson(name: String!) : Person!
+}
+
+type Person {
+    id: ID!
+    firstName(type: String): String!
+    lastName: String!
+    addresses(type: String): [Address!]!
+}
+
+type Address {
+    street: String!
+}
